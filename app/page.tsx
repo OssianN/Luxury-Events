@@ -1,95 +1,103 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Image from 'next/image'
+import styles from './page.module.css'
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
+      <div className={styles.hero}>
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          className={styles.heroImage}
+          src={'/heroImage.png'}
+          alt="fira"
+          height={350}
+          width={400}
         />
+        <h1 className={styles.heroHeading}>
+          Skapa ditt Drömevent
+          <span className={styles.heroHeadingSpan}>Hyr vår Tuktuk</span>
+        </h1>
+        <button className={styles.contactButton}>Kontakt</button>
       </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
+      <section className={styles.contentContainer}>
+        <div className={styles.introText}>
           <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+            Fyller du år? Gifter du dig? Nyligen förlovad eller planerar du en
+            möhippa?
           </p>
-        </a>
-      </div>
+          <p>
+            Kanske är det du som är ansvarig över PR och marknadsföring? Eller
+            behöver du en serveringsvagn för försäljning? Oavsett så passar vår
+            tuktuk perfekt till just ditt evenemang!{' '}
+          </p>
+        </div>
+
+        <div className={styles.gallery}>
+          <Image
+            className={styles.galleryImage}
+            src="/IMG_4047.jpeg"
+            width={250}
+            height={250}
+            alt="lyxevent 1"
+          />
+
+          <Image
+            className={styles.galleryImage}
+            src="/IMG_4782.jpg"
+            width={250}
+            height={250}
+            alt="lyxevent 2"
+          />
+
+          <Image
+            className={styles.galleryImage}
+            src="/IMG_5051.JPEG"
+            width={250}
+            height={250}
+            alt="lyxevent 3"
+          />
+
+          <Image
+            className={styles.galleryImage}
+            src="/IMG_6685.jpeg"
+            width={250}
+            height={250}
+            alt="lyxevent 4"
+          />
+
+          <Image
+            className={styles.galleryImage}
+            src="/picture-2600.jpeg"
+            width={250}
+            height={250}
+            alt="lyxevent 5"
+          />
+
+          <Image
+            className={styles.galleryImage}
+            src="/picture-2601.jpeg"
+            width={250}
+            height={250}
+            alt="lyxevent 6"
+          />
+        </div>
+
+        {/* <Image
+          className={styles.introLogo}
+          src="/logo.png"
+          width={300}
+          height={300}
+          alt="lyxevent"
+        /> */}
+        <div className={styles.introText}>
+          <p>
+            Är du redo att ta ditt event till nästa nivå? Tvivla då inte på att
+            kontakta oss och boka tuktuken direkt!
+          </p>
+
+          <button className={styles.contactButton2}>Kontakt</button>
+        </div>
+      </section>
     </main>
-  );
+  )
 }
