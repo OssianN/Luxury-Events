@@ -1,0 +1,14 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.galleryImage {
+  width: 30%;
+  min-width: 250px;
+  height: auto;
+  flex-grow: 1;
+  object-fit: cover;
+}

@@ -14,7 +14,7 @@ const raleway = Raleway({
 })
 
 export const metadata: Metadata = {
-  title: 'Lyxevent – hyr tuktuk',
+  title: 'Lyxevent – hyr en tuktuk',
   description: 'Hyr en tuktuk för en lyxigare fest',
 }
 

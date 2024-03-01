@@ -1,0 +1,10 @@
+.introText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  color: #353535;
+  text-align: center;
+  max-width: 600px;
+  padding: 2rem 0;
+}

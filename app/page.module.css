@@ -4,40 +4,6 @@
   margin-bottom: 6rem;
 }
 
-.hero {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1rem;
-  background-image: linear-gradient(#e2e2e2, #191919bd);
-  margin-inline: 0;
-}
-
-.heroImage {
-  object-fit: cover;
-  width: 100%;
-  mix-blend-mode: screen;
-}
-
-.heroHeading {
-  position: absolute;
-  font-size: 3rem;
-  letter-spacing: -0.15rem;
-  line-height: 2.7rem;
-  font-weight: 500;
-  font-family: var(--font-cormorant-garamond);
-  bottom: 6rem;
-  color: white;
-}
-
-.heroHeadingSpan {
-  display: block;
-  font-size: 1.5rem;
-  letter-spacing: -0.05rem;
-}
-
 .contentContainer {
   display: flex;
   flex-direction: column;
@@ -46,52 +12,15 @@
   padding: 2rem;
 }
 
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.galleryImage {
-  width: 30%;
-  min-width: 250px;
-  flex-grow: 1;
-  height: auto;
-  object-fit: cover;
-}
-
-.contactButton {
-  position: absolute;
-  bottom: 2rem;
-  background: linear-gradient(-135deg, white, #ffffffce);
-  backdrop-filter: blur(2rem);
-  color: black;
-}
-
-.contactButton2 {
-  background: black;
-  color: white;
-}
-
-.introText {
+.footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  color: #353535;
-  text-align: center;
-  max-width: 600px;
-}
-
-.introLogo {
-  align-self: center;
-}
-
-@media (min-width: 1200px) {
-  .hero {
-    margin: 2rem;
-  }
+  width: 100%;
+  gap: 2rem;
+  background: #f7f7f7;
+  margin-top: 2rem;
+  padding: 2rem;
 }
 
 @media (min-width: 64rem) {
