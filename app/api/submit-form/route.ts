@@ -16,7 +16,7 @@ export const POST = async (req: NextRequest) => {
     const mailOptions = {
       from: process.env.EMAIL,
       to: email,
-      subject: `${name} är intresserad av att boka din Tuktuk`,
+      subject: `${name} angående Tuktuk`,
       text: `${message}
 
 ${phone ? `Telefonnummer: ${phone}` : ''}`,

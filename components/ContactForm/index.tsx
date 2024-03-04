@@ -4,6 +4,7 @@ import {
   type ChangeEventHandler,
   type FormEvent,
   useState,
+  useEffect,
 } from 'react'
 import styles from './contactForm.module.css'
 
@@ -25,6 +26,7 @@ export const ContactForm = () => {
   const [formInput, setFormInput] = useState<FormState>(initialFormState)
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [error, setError] = useState<string>('')
+  const [isEmailSent, setIsEmailSent] = useState<boolean>(false)
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -42,26 +44,34 @@ export const ContactForm = () => {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(formInput),
     })
-    const data = await res.json()
 
+    const data = await res.json()
     setIsLoading(false)
+
     if (!res.ok) {
       setError(data.error)
       return
     }
 
-    setIsLoading(false)
+    setIsEmailSent(true)
     setFormInput(initialFormState)
   }
+
+  useEffect(() => {
+    setError('')
+  }, [formInput])
 
   return (
     <div className={styles.contactFormContainer} id="kontakta oss">
       <h2 className={styles.formHeading}>Kontakta oss</h2>
 
       <form className={styles.contacForm} onSubmit={handleSubmit}>
+        {error && <p>{error}</p>}
+        {isEmailSent && <p>Tack för ditt intresse, vi återkommer snart!</p>}
         <input
           className={`${styles.formInput} ${styles.nameInput}`}
           onChange={handleChange}
+          value={formInput.name}
           type="text"
           autoComplete="name"
           name="name"
@@ -71,6 +81,7 @@ export const ContactForm = () => {
         <input
           className={`${styles.formInput} ${styles.phoneInput}`}
           onChange={handleChange}
+          value={formInput.email}
           type="text"
           autoComplete="email"
           name="email"
@@ -80,14 +91,16 @@ export const ContactForm = () => {
         <input
           className={`${styles.formInput} ${styles.emailInput}`}
           onChange={handleChange}
+          value={formInput.phone}
           type="number"
           autoComplete="phone"
           name="phone"
           placeholder="Telefon"
         />
         <textarea
-          onChange={handleChange}
           className={`${styles.formInput} ${styles.messageInput}`}
+          onChange={handleChange}
+          value={formInput.message}
           placeholder="Meddelande..."
           name="message"
           required
@@ -99,7 +112,6 @@ export const ContactForm = () => {
         >
           {isLoading ? 'Sending...' : 'Send'}
         </button>
-        {error && <p>{error}</p>}
       </form>
     </div>
   )

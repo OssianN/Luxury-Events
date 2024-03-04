@@ -21,7 +21,8 @@
   grid-template-areas:
     'name message'
     'phone message'
-    'email message';
+    'email message'
+    'errorMessage button';
   gap: 1rem;
   grid-template-columns: 1fr 1fr;
 }
@@ -29,16 +30,20 @@
 .formInput {
   border: none;
   width: 20rem;
-  padding-block: 0.75rem;
+  padding-block: 1rem;
   padding-inline: 0.5rem;
   border-radius: 0.25rem;
   font-size: 1rem;
 }
 
 .submitButton {
+  padding-block: 0.75rem;
+  width: 8rem;
   background: white;
   box-shadow: 0 0 5px var(--box-shadow-color);
   margin-top: 1rem;
+  grid-area: button;
+  justify-self: flex-end;
 }
 
 .nameInput {
