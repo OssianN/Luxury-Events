@@ -5,12 +5,12 @@ import './globals.css'
 const carmorant = Cormorant_Garamond({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-cormorant-garamond',
 })
 
 const raleway = Raleway({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-raleway',
 })
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${raleway.className} ${carmorant.variable}`}>
+      <body className={`${raleway.variable} ${carmorant.className}`}>
         {children}
       </body>
     </html>

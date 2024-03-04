@@ -4,7 +4,7 @@ import { ContactButton } from '../ContactButton'
 
 export const Hero = () => {
   return (
-    <div className={styles.hero}>
+    <section className={styles.hero}>
       <Image
         className={styles.heroImage}
         src={'/heroImage.png'}
@@ -20,6 +20,6 @@ export const Hero = () => {
       <div className={styles.buttonContainer}>
         <ContactButton />
       </div>
-    </div>
+    </section>
   )
 }

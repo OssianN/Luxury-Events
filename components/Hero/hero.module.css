@@ -7,6 +7,7 @@
   gap: 1rem;
   background-image: linear-gradient(#e2e2e2, #191919bd);
   margin-inline: 0;
+  margin-bottom: var(--base-block-margin);
 }
 
 .heroImage {
@@ -17,11 +18,10 @@
 
 .heroHeading {
   position: absolute;
-  font-size: 3rem;
+  font-size: 5rem;
   letter-spacing: -0.15rem;
-  line-height: 2.7rem;
+  line-height: 3.5rem;
   font-weight: 500;
-  font-family: var(--font-cormorant-garamond);
   bottom: 6rem;
   color: white;
 }
@@ -40,6 +40,7 @@
 @media (min-width: 1200px) {
   .hero {
     margin: 2rem;
-    margin-bottom: 0;
+    margin-bottom: var(--base-block-margin);
+    border-radius: 0.25rem;
   }
 }

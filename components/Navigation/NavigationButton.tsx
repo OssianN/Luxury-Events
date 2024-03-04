@@ -10,7 +10,7 @@ export const NavigationButton = ({ to }: NavigationButtonProps) => {
     <Button
       spy={true}
       smooth={true}
-      offset={-200}
+      offset={-250}
       duration={500}
       to={to}
       activeClass={styles.activeButton}

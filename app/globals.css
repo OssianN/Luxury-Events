@@ -1,6 +1,10 @@
 :root {
   --max-width: 1200px;
   --dark-font-color: black;
+  --light-grey-color: #f7f7f7;
+  --gold-color: #ecc47b;
+  --base-block-margin: 3rem;
+  --box-shadow-color: #00000015;
 }
 
 * {
@@ -25,13 +29,30 @@ a {
   text-decoration: none;
 }
 
+h2 {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: 500;
+}
+
 button {
   cursor: pointer;
   border: none;
   width: 10rem;
   padding-block: 1rem;
   border-radius: 0.25rem;
-  font-family: '__Raleway_fd83c3', '__Raleway_Fallback_fd83c3';
-  font-size: 1rem;
-  font-weight: 600;
+  font-family: var(--font-raleway);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
