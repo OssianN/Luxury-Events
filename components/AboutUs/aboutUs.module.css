@@ -1,0 +1,10 @@
+.aboutUsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  padding-block: var(--base-block-margin);
+}
+
+.aboutUsSubtitle {
+  margin-bottom: 1rem;
+}
