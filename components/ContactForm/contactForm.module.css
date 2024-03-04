@@ -1,0 +1,53 @@
+.contactFormContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background: var(--gold-color);
+  border-radius: 0.25rem;
+  box-shadow: 0 0 20px var(--box-shadow-color);
+  padding-block: var(--base-block-margin);
+}
+
+.formHeading {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: 500;
+  color: white;
+}
+
+.contacForm {
+  display: grid;
+  grid-template-areas:
+    'name message'
+    'phone message'
+    'email message';
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.formInput {
+  border: none;
+  background: var(--light-grey-color);
+  width: 20rem;
+  padding-block: 0.75rem;
+  padding-inline: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.nameInput {
+  grid-area: name;
+}
+
+.phoneInput {
+  grid-area: phone;
+}
+
+.emailInput {
+  grid-area: email;
+}
+
+.messageInput {
+  grid-area: message;
+}
