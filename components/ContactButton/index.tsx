@@ -1,4 +1,6 @@
+'use client'
 import { CSSProperties } from 'react'
+import { Button } from 'react-scroll'
 import styles from './contactButton.module.css'
 
 type ContactButtonProps = {
@@ -14,8 +16,16 @@ export const ContactButton = ({ dark }: ContactButtonProps) => {
     : {}
 
   return (
-    <button className={styles.contactButton} style={style}>
+    <Button
+      to="kontakta oss"
+      spy={true}
+      smooth={true}
+      offset={-250}
+      duration={500}
+      className={styles.contactButton}
+      style={style}
+    >
       Kontakt
-    </button>
+    </Button>
   )
 }
