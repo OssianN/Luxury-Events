@@ -2,10 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   gap: 2rem;
   background: var(--light-grey-color);
   padding: 2rem;
+  margin: 2rem;
   margin-top: var(--base-block-margin);
 }
 

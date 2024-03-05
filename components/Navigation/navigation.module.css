@@ -3,8 +3,9 @@
   flex-direction: column;
   gap: 0.5rem;
   position: fixed;
-  top: 45%;
-  left: 1rem;
+  top: calc(50% - 2rem);
+  left: 0.75rem;
+  height: 4rem;
 }
 
 .button {
@@ -15,14 +16,6 @@
   align-items: center;
   padding: 0;
   height: 1rem;
-}
-
-.button .buttonText {
-  opacity: 0;
-}
-
-.button:hover .buttonText {
-  opacity: 1;
 }
 
 .activeButton > .indicator {
@@ -40,8 +33,24 @@
 }
 
 .buttonText {
-  transition: 0.3s;
-  font-weight: 500;
-  color: var(--gold-color);
-  filter: drop-shadow(0 10px 5px var(--box-shadow-color));
+  visibility: hidden;
+}
+
+@media (min-width: 64rem) {
+  .buttonText {
+    visibility: visible;
+    transition: 0.3s;
+    font-weight: 500;
+    color: var(--gold-color);
+    filter: drop-shadow(0 10px 5px var(--box-shadow-color));
+    display: block;
+  }
+
+  .button .buttonText {
+    opacity: 0;
+  }
+
+  .button:hover .buttonText {
+    opacity: 1;
+  }
 }

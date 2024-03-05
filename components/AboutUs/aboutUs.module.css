@@ -1,11 +1,23 @@
 .aboutUsContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   padding-block: var(--base-block-margin);
 }
 
 .aboutUsSubtitle {
+  text-align: center;
   margin-bottom: 1rem;
   color: var(--dark-font-color);
+}
+
+@media (min-width: 32rem) {
+  .aboutUsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .aboutUsSubtitle {
+    text-align: left;
+  }
 }

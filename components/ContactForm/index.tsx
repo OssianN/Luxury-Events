@@ -1,14 +1,15 @@
 'use client'
 import {
   type ChangeEvent,
-  type ChangeEventHandler,
   type FormEvent,
   useState,
   useEffect,
+  useRef,
 } from 'react'
 import styles from './contactForm.module.css'
+import { FormInput } from './FormInput'
 
-type FormState = {
+export type FormState = {
   name: string
   email: string
   phone: string
@@ -70,43 +71,41 @@ export const ContactForm = () => {
         {isEmailSent && (
           <p className={styles.emailSentText}>Tack, vi återkommer snart!</p>
         )}
-        <input
-          className={`${styles.formInput} ${styles.nameInput}`}
-          onChange={handleChange}
+
+        <FormInput
+          handleChange={handleChange}
           value={formInput.name}
-          type="text"
-          autoComplete="name"
           name="name"
           placeholder="Namn"
-          required
+          className="nameInput"
         />
-        <input
-          className={`${styles.formInput} ${styles.phoneInput}`}
-          onChange={handleChange}
+
+        <FormInput
+          handleChange={handleChange}
           value={formInput.email}
-          type="text"
-          autoComplete="email"
           name="email"
           placeholder="Email"
-          required
+          className="emailInput"
         />
-        <input
-          className={`${styles.formInput} ${styles.emailInput}`}
-          onChange={handleChange}
+
+        <FormInput
+          handleChange={handleChange}
           value={formInput.phone}
-          type="number"
-          autoComplete="phone"
           name="phone"
           placeholder="Telefon"
+          className="phoneInput"
+          type="number"
+          required={false}
         />
-        <textarea
-          className={`${styles.formInput} ${styles.messageInput}`}
-          onChange={handleChange}
+
+        <FormInput
+          handleChange={handleChange}
           value={formInput.message}
-          placeholder="Meddelande..."
           name="message"
-          required
+          placeholder="Meddelande..."
+          className="messageInput"
         />
+
         <button
           className={styles.submitButton}
           type="submit"

@@ -39,7 +39,7 @@ h2 {
 button {
   cursor: pointer;
   border: none;
-  width: 10rem;
+  width: 12rem;
   padding-block: 1rem;
   border-radius: 0.25rem;
   font-family: var(--font-raleway);

@@ -18,6 +18,7 @@
 
 .heroHeading {
   position: absolute;
+  width: 100%;
   font-size: 5rem;
   letter-spacing: -0.15rem;
   line-height: 3.5rem;
@@ -26,10 +27,16 @@
   color: white;
 }
 
-.heroHeadingSpan {
+.heroHeadingSpan1 {
+  display: block;
+  animation: hero-heading 0.7s ease-out;
+}
+
+.heroHeadingSpan2 {
   display: block;
   font-size: 1.5rem;
   letter-spacing: -0.05rem;
+  animation: hero-heading-span 0.7s ease-out;
 }
 
 .buttonContainer {
@@ -42,5 +49,23 @@
     margin: 2rem;
     margin-bottom: var(--base-block-margin);
     border-radius: 0.25rem;
+  }
+}
+
+@keyframes hero-heading {
+  0% {
+    transform: translateX(60px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes hero-heading-span {
+  0% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }

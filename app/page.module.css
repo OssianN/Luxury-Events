@@ -8,7 +8,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
   padding: 2rem;
   padding-top: 0;
 }
@@ -16,5 +15,11 @@
 @media (min-width: 64rem) {
   .main {
     gap: 4rem;
+  }
+}
+
+@media (min-width: 32rem) {
+  .contentContainer {
+    padding-inline: 4rem;
   }
 }

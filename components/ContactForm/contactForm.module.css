@@ -7,6 +7,7 @@
   border-radius: 0.25rem;
   box-shadow: 0 0 20px var(--box-shadow-color);
   padding-block: var(--base-block-margin);
+  margin-top: var(--base-block-margin);
 }
 
 .formHeading {
@@ -17,37 +18,37 @@
 }
 
 .contacForm {
-  display: grid;
-  grid-template-areas:
-    'name message'
-    'phone message'
-    'email message'
-    'errorMessage button';
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
-  grid-template-columns: 1fr 1fr;
 }
 
 .formInput {
-  border: none;
-  width: 20rem;
+  width: 15rem;
   padding-block: 1rem;
-  padding-inline: 0.5rem;
-  border-radius: 0.25rem;
+  padding-inline: 1rem;
   font-size: 1rem;
+  background: linear-gradient(45deg, white, #ffffffd8);
+  backdrop-filter: blur(2rem);
+  border-radius: 0.25rem;
+  border: 2px solid white;
+  opacity: 0;
+  resize: none;
+  font-weight: 300;
 }
 
 .submitButton {
   padding-block: 0.75rem;
   width: 8rem;
-  background: white;
   box-shadow: 0 0 5px var(--box-shadow-color);
-  margin-top: 1rem;
   grid-area: button;
   justify-self: flex-end;
+  border: 2px solid white;
+  color: white;
+  background: #ffffff57;
 }
 
 .emailSentText {
-  margin-top: 1rem;
   font-size: 1.5rem;
   white-space: pre-wrap;
   color: white;
@@ -66,5 +67,39 @@
 }
 
 .messageInput {
+  min-height: 6rem;
   grid-area: message;
+}
+
+.animateUp {
+  animation: animate-up 0.5s ease-out forwards;
+}
+
+@media (min-width: 25rem) {
+  .formInput {
+    width: 20rem;
+  }
+}
+
+@media (min-width: 56rem) {
+  .contacForm {
+    display: grid;
+    grid-template-areas:
+      'name message'
+      'phone message'
+      'email message'
+      'errorMessage button';
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@keyframes animate-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -12,10 +12,10 @@ export const Hero = () => {
         height={450}
         width={650}
       />
-      <h1 className={styles.heroHeading}>
-        Skapa ditt Drömevent
-        <span className={styles.heroHeadingSpan}>Hyr vår Tuktuk</span>
-      </h1>
+      <div className={styles.heroHeading}>
+        <span className={styles.heroHeadingSpan1}>Skapa ditt Drömevent</span>
+        <span className={styles.heroHeadingSpan2}>Hyr vår Tuktuk</span>
+      </div>
 
       <div className={styles.buttonContainer}>
         <ContactButton />
