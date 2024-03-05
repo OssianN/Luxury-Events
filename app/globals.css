@@ -1,6 +1,6 @@
 :root {
   --max-width: 1200px;
-  --dark-font-color: black;
+  --dark-font-color: #2d2d2d;
   --light-grey-color: #f7f7f7;
   --gold-color: #ecc47b;
   --base-block-margin: 3rem;
@@ -33,6 +33,7 @@ h2 {
   margin-bottom: 2rem;
   font-size: 3rem;
   font-weight: 500;
+  color: var(--dark-font-color);
 }
 
 button {
@@ -44,6 +45,7 @@ button {
   font-family: var(--font-raleway);
   font-size: 1.1rem;
   font-weight: 500;
+  color: var(--dark-font-color);
 }
 
 input::-webkit-outer-spin-button,

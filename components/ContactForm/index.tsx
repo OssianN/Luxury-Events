@@ -67,7 +67,9 @@ export const ContactForm = () => {
 
       <form className={styles.contacForm} onSubmit={handleSubmit}>
         {error && <p>{error}</p>}
-        {isEmailSent && <p>Tack för ditt intresse, vi återkommer snart!</p>}
+        {isEmailSent && (
+          <p className={styles.emailSentText}>Tack, vi återkommer snart!</p>
+        )}
         <input
           className={`${styles.formInput} ${styles.nameInput}`}
           onChange={handleChange}

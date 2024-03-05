@@ -1,5 +1,5 @@
 .contactButton {
-  --contact-button-color: black;
+  --contact-button-color: var(--dark-font-color);
   --contact-button-bg: linear-gradient(-135deg, white, #ffffffce);
 
   background: var(--contact-button-bg);

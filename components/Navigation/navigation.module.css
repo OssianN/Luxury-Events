@@ -18,21 +18,15 @@
 }
 
 .button .buttonText {
-  display: none;
-}
-
-.activeButton > .buttonText {
   opacity: 0;
-  display: block;
-}
-
-.activeButton > .indicator {
-  height: 1rem;
 }
 
 .button:hover .buttonText {
   opacity: 1;
-  display: block;
+}
+
+.activeButton > .indicator {
+  height: 1rem;
 }
 
 .indicator {
@@ -46,31 +40,8 @@
 }
 
 .buttonText {
-  animation: button-text 1.5s;
   transition: 0.3s;
   font-weight: 500;
   color: var(--gold-color);
   filter: drop-shadow(0 10px 5px var(--box-shadow-color));
-}
-
-@keyframes button-text {
-  0% {
-    opacity: 0;
-    transform: translate(-20px) scale(1);
-  }
-  10% {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-  30% {
-    transform: translate(0px) scale(1);
-  }
-  90% {
-    opacity: 1;
-    transform: translate(0px) scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: translate(-20px) scale(1);
-  }
 }

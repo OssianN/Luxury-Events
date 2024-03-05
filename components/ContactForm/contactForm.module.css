@@ -46,6 +46,13 @@
   justify-self: flex-end;
 }
 
+.emailSentText {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  white-space: pre-wrap;
+  color: white;
+}
+
 .nameInput {
   grid-area: name;
 }

@@ -7,4 +7,5 @@
 
 .aboutUsSubtitle {
   margin-bottom: 1rem;
+  color: var(--dark-font-color);
 }
