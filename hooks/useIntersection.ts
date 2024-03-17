@@ -4,9 +4,16 @@ import { type RefObject, useEffect, useState } from 'react'
 export const useIntersection = (
   ref: RefObject<HTMLElement>,
   options: IntersectionObserverInit = {}
-): IntersectionObserverEntry | null => {
+): boolean | undefined => {
   const [intersectionObserverEntry, setIntersectionObserverEntry] =
     useState<IntersectionObserverEntry | null>(null)
+  const [isVisible, setIsVisible] = useState<boolean>()
+
+  useEffect(() => {
+    if (!isVisible) {
+      setIsVisible(intersectionObserverEntry?.isIntersecting)
+    }
+  }, [isVisible, intersectionObserverEntry?.isIntersecting])
 
   useEffect(() => {
     if (ref.current && typeof IntersectionObserver === 'function') {
@@ -26,5 +33,5 @@ export const useIntersection = (
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref.current, options.threshold, options.root, options.rootMargin])
 
-  return intersectionObserverEntry
+  return isVisible
 }
