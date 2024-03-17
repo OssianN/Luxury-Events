@@ -46,9 +46,8 @@
 
 @media (min-width: 1200px) {
   .hero {
-    margin: 2rem;
+    margin: 2rem 4rem;
     margin-bottom: var(--base-block-margin);
-    border-radius: 0.25rem;
   }
 }
 

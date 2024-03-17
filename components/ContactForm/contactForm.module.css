@@ -86,8 +86,8 @@
     display: grid;
     grid-template-areas:
       'name message'
-      'phone message'
       'email message'
+      'phone message'
       'errorMessage button';
     grid-template-columns: 1fr 1fr;
   }
