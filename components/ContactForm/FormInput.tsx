@@ -1,4 +1,4 @@
-import { useRef, type ChangeEvent, useState, useEffect } from 'react'
+import { useRef } from 'react'
 import styles from './contactForm.module.css'
 import { useIntersection } from '@/hooks/useIntersection'
 
