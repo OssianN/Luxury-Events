@@ -30,7 +30,7 @@ Meddelande:
 ${message}`,
     }
 
-    // await transporter.sendMail(mailOptions)
+    await transporter.sendMail(mailOptions)
 
     return { ...initialFormState, isEmailSent: true }
   } catch (e) {
