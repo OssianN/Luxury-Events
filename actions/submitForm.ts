@@ -1,9 +1,10 @@
 'use server'
-import { FormState, initialFormState } from '@/components/ContactForm'
+import { initialFormState } from '@/constants/formState'
+import type { FormState } from '@/types'
 import nodemailer from 'nodemailer'
 
 const transporter = nodemailer.createTransport({
-  service: 'hotmail',
+  service: 'iCloud',
   auth: {
     user: process.env.NODEMAILER_EMAIL,
     pass: process.env.NODEMAILER_PASSWORD,
@@ -17,15 +18,20 @@ export const submitForm = async (_: FormState, formData: FormData) => {
     ) as unknown as FormState
 
     const mailOptions = {
-      from: email,
+      from: process.env.NODEMAILER_EMAIL,
       to: process.env.EMAIL_RECIEVER_ADDRESS,
       subject: `${name} angående Tuktuk`,
-      text: `${message}
+      text: `
+Kontakt:
+${phone}
+${email}
 
-    ${phone ? `Telefonnummer: ${phone}` : ''}`,
+Meddelande:
+${message}`,
     }
 
-    await transporter.sendMail(mailOptions)
+    // await transporter.sendMail(mailOptions)
+
     return { ...initialFormState, isEmailSent: true }
   } catch (e) {
     console.error(e)

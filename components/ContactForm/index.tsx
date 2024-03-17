@@ -4,33 +4,24 @@ import { FormInput } from './FormInput'
 import { submitForm } from '@/actions/submitForm'
 import { SubmitButton } from './SubmitButton'
 import { useFormState } from 'react-dom'
-
-export type FormState = {
-  name: string
-  email: string
-  phone: string
-  message: string
-  isEmailSent?: boolean
-  error?: boolean
-}
-
-export const initialFormState: FormState = {
-  name: '',
-  email: '',
-  phone: '',
-  message: '',
-  isEmailSent: false,
-  error: false,
-}
+import { initialFormState } from '@/constants/formState'
+import { useEffect, useRef } from 'react'
 
 export const ContactForm = () => {
   const [formState, formAction] = useFormState(submitForm, initialFormState)
+  const formRef = useRef<HTMLFormElement>(null)
+
+  useEffect(() => {
+    if (formState.isEmailSent) {
+      formRef?.current?.reset()
+    }
+  }, [formState.isEmailSent])
 
   return (
     <div className={styles.contactFormContainer} id="kontakta oss">
       <h2 className={styles.formHeading}>Kontakta oss</h2>
 
-      <form className={styles.contacForm} action={formAction}>
+      <form className={styles.contacForm} action={formAction} ref={formRef}>
         <FormInput name="name" placeholder="Namn" className="nameInput" />
         <FormInput name="email" placeholder="Email" className="emailInput" />
         <FormInput
